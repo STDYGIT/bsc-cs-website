@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    line-height: 1.6;
+}
+
+body.dark {
+    background-color: #0e1629;
+    color: #eee;
+}
+
+/* Header Styles */
+header {
+    background-color: #1a2436;
+    color: #eee;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.department-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #444;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+/* Theme Switch Styles */
+.theme-switch {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #f39c12, #f1c40f);
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.theme-switch::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: left 0.3s ease-in-out, background-image 0.3s ease-in-out;
+    background-image: url('icons8-sun-64.png');
+}
+
+.theme-switch.dark-theme {
+    background: linear-gradient(135deg, #1d72b8, #0056b3);
+}
+
+.theme-switch.dark-theme::before {
+    left: 33px;
+    background-image: url('icons8-moon-64.png');
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 40px;
+    background-color: #f4f4f4;
+    transition: background-color 0.5s ease-in-out;
+}
+
+body.dark main {
+    background-color: #121b2d;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Hover Effect with Color Transition */
+section:hover {
+    background-color: #e0f7fa; /* Light cyan background on hover */
+    color: #00796b; /* Dark cyan text on hover */
+    border-color: #4dd0e1; /* Light cyan border on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark section {
+    background-color: #1b2b42;
+    border-color: #2a3a52;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark section:hover {
+    background-color: #37474f; /* Dark cyan background on hover in dark mode */
+    color: #b2ebf2; /* Light cyan text on hover in dark mode */
+    border-color: #4fc3f7; /* Light cyan border on hover in dark mode */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Section Heading */
+section h2 {
+    margin-top: 0;
+    color: inherit;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Section Paragraph */
+section p {
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+body.dark section p {
+    color: #bbb;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1a2436;
+    color: #eee;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 2px solid #333;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0 0;
+    margin: 0;
+}
+
+.social-media a {
+    color: #eee;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+    color: #007bff;
+}

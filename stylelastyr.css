@@ -1,0 +1,224 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0e1629; /* Dark theme background color */
+  color: #eee; /* Dark theme text color */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
+}
+
+header {
+  background-color: #1a2436; /* Dark theme header background color */
+  color: #eee; /* Dark theme header text color */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.back-button {
+  color: #ffffff;
+  background-color: #007bff; /* Button background color */
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+#readme {
+  background-color: #1a2436; /* Darker README background color */
+  border: 1px solid #333; /* Darker border color */
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#readme p {
+  margin: 0 0 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Optional: Add space between the button and the swipe container */
+}
+
+.card {
+  background-color: #1a2436; /* Darker card background color */
+  border: 1px solid #333; /* Darker border color */
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-header {
+  background-color: #0e1629; /* Darker header background color */
+  padding: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-color: #444;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #007bff; /* Button background color */
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+footer {
+  background-color: #1a2436; /* Dark theme footer background color */
+  color: #eee; /* Dark theme footer text color */
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Swipe Button Styles */
+.swipe-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  background-color: #000000; /* Darker background color */
+  border-radius: 25px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.swipe-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #4c0b51; /* Slightly darker background color for the button */
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* To ensure the gradient text stays within the button */
+  padding-right: 10px;
+  transition: left 0.3s ease;
+}
+
+.swipe-text {
+  position: relative;
+  font-size: 14px;
+  /* font-weight: bold; */
+  background: linear-gradient(90deg, #c0c0c0, #e5e5e5, #c0c0c0); /* Silver gradient colors */
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: gradient-text 3s linear infinite, glow 2s ease-in-out infinite; /* Apply gradient animation and glowing effect */
+}
+
+@keyframes gradient-text {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.6), 0 0 20px rgba(192, 192, 192, 0.5), 0 0 30px rgba(192, 192, 192, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(192, 192, 192, 0.8), 0 0 30px rgba(192, 192, 192, 0.7), 0 0 40px rgba(192, 192, 192, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.6), 0 0 20px rgba(192, 192, 192, 0.5), 0 0 30px rgba(192, 192, 192, 0.4);
+  }
+}
+
+.swipe-button.active {
+  left: 100%;
+}
+
+.downloading-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #28a745;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 25px;
+  animation: pop 0.3s ease-in-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
