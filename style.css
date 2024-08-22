@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 body.dark {
@@ -27,12 +28,16 @@ header {
     justify-content: space-between;
     border-bottom: 2px solid #333;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .department-title {
     font-size: 24px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 nav ul {
@@ -105,7 +110,7 @@ body.dark main {
 }
 
 /* Section Styles */
-section {
+.content-section {
     margin-bottom: 40px;
     padding: 30px;
     background-color: #ffffff;
@@ -115,23 +120,37 @@ section {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     overflow: hidden;
+    transform: translateY(0);
+    animation: fadeInUp 0.7s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Hover Effect with Color Transition */
-section:hover {
+.content-section:hover {
     background-color: #e0f7fa; /* Light cyan background on hover */
     color: #00796b; /* Dark cyan text on hover */
     border-color: #4dd0e1; /* Light cyan border on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Slight lift on hover */
 }
 
-body.dark section {
+body.dark .content-section {
     background-color: #1b2b42;
     border-color: #2a3a52;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-body.dark section:hover {
+body.dark .content-section:hover {
     background-color: #37474f; /* Dark cyan background on hover in dark mode */
     color: #b2ebf2; /* Light cyan text on hover in dark mode */
     border-color: #4fc3f7; /* Light cyan border on hover in dark mode */
@@ -139,7 +158,7 @@ body.dark section:hover {
 }
 
 /* Section Heading */
-section h2 {
+.content-section h2 {
     margin-top: 0;
     color: inherit;
     font-size: 22px;
@@ -147,13 +166,13 @@ section h2 {
 }
 
 /* Section Paragraph */
-section p {
+.content-section p {
     color: #666;
     margin-bottom: 0;
     line-height: 1.5;
 }
 
-body.dark section p {
+body.dark .content-section p {
     color: #bbb;
 }
 
