@@ -37,10 +37,62 @@ document.addEventListener('DOMContentLoaded', () => {
         themeSwitch.classList.toggle('dark-theme');
     }
 });
+
 document.getElementById('home-button').addEventListener('click', function() {
     if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
         window.location.reload(); // Reloads the page if it's already the homepage
     } else {
         window.location.href = 'index.html'; // Navigates to the homepage if not already there
     }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const phrases = ["last year question papers!!", "video resources!!", "course syllabus!!!"];
+    const typewriterElement = document.querySelector('.typewriter');
+    const typingSpeed = 100;
+    const backspacingSpeed = 50;
+    const pauseBetweenPhrases = 2000;
+    const pauseAfterCompleteTyping = 1000;
+
+    let currentPhraseIndex = 0;
+
+    function typePhrase(phrase) {
+        return new Promise(resolve => {
+            let i = 0;
+            typewriterElement.textContent = '';
+            const typingInterval = setInterval(() => {
+                typewriterElement.textContent += phrase.charAt(i);
+                i++;
+                if (i > phrase.length) {
+                    clearInterval(typingInterval);
+                    setTimeout(() => {
+                        backspacePhrase(phrase).then(resolve);
+                    }, pauseAfterCompleteTyping);
+                }
+            }, typingSpeed);
+        });
+    }
+
+    function backspacePhrase(phrase) {
+        return new Promise(resolve => {
+            let i = phrase.length;
+            const backspacingInterval = setInterval(() => {
+                typewriterElement.textContent = phrase.substring(0, i);
+                i--;
+                if (i < 0) {
+                    clearInterval(backspacingInterval);
+                    setTimeout(() => {
+                        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                        typePhrase(phrases[currentPhraseIndex]).then(resolve);
+                    }, pauseBetweenPhrases);
+                }
+            }, backspacingSpeed);
+        });
+    }
+
+    function startTypewriter() {
+        typePhrase(phrases[currentPhraseIndex]);
+    }
+
+    startTypewriter();
 });

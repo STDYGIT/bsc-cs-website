@@ -3,8 +3,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #ffffff; /* Light theme background */
+    color: #333; /* Light theme text color */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,24 +14,29 @@ body {
 }
 
 body.dark {
-    background-color: #0e1629;
+    background-color: #000; /* Black background for dark theme */
     color: #eee;
 }
 
 /* Header Styles */
 header {
-    background-color: #1a2436;
-    color: #eee;
+    background-color: #f4f4f4; /* Light background for header */
+    color: #333;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid #333;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+body.dark header {
+    background-color: #111; /* Darker shade for dark theme header */
+    color: #eee;
 }
 
 .department-title {
@@ -49,15 +54,25 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #eee;
+    color: #333;
     font-size: 18px;
     padding: 10px 20px;
     border-radius: 25px;
-    background-color: #444;
+    background-color: #ddd;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+body.dark nav a {
+    color: #eee;
+    background-color: #444;
+}
+
 nav a:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+body.dark nav a:hover {
     background-color: #666;
     color: #fff;
 }
@@ -101,19 +116,19 @@ nav a:hover {
 main {
     flex: 1;
     padding: 40px;
-    background-color: #f4f4f4;
+    background-color: #ffffff; /* Light background to match body */
     transition: background-color 0.5s ease-in-out;
 }
 
 body.dark main {
-    background-color: #121b2d;
+    background-color: #000; /* Black background to match typewriter section */
 }
 
 /* Section Styles */
 .content-section {
     margin-bottom: 40px;
     padding: 30px;
-    background-color: #ffffff;
+    background-color: #f9f9f9; /* Light background for sections */
     border: 1px solid #ddd;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -122,6 +137,11 @@ body.dark main {
     overflow: hidden;
     transform: translateY(0);
     animation: fadeInUp 0.7s ease;
+}
+
+body.dark .content-section {
+    background-color: #111; /* Darker background for dark theme sections */
+    border-color: #333;
 }
 
 @keyframes fadeInUp {
@@ -137,24 +157,17 @@ body.dark main {
 
 /* Hover Effect with Color Transition */
 .content-section:hover {
-    background-color: #e0f7fa; /* Light cyan background on hover */
-    color: #00796b; /* Dark cyan text on hover */
-    border-color: #4dd0e1; /* Light cyan border on hover */
+    background-color: #f0f0f0; /* Slightly darker on hover */
+    color: #000; /* Highlighted text on hover */
+    border-color: #ccc; /* Lighter border on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px); /* Slight lift on hover */
 }
 
-body.dark .content-section {
-    background-color: #1b2b42;
-    border-color: #2a3a52;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
 body.dark .content-section:hover {
-    background-color: #37474f; /* Dark cyan background on hover in dark mode */
-    color: #b2ebf2; /* Light cyan text on hover in dark mode */
-    border-color: #4fc3f7; /* Light cyan border on hover in dark mode */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    background-color: #333; /* Darker background on hover */
+    color: #00ffcc; /* Highlighted text on hover */
+    border-color: #555; /* Lighter border on hover */
 }
 
 /* Section Heading */
@@ -167,29 +180,46 @@ body.dark .content-section:hover {
 
 /* Section Paragraph */
 .content-section p {
-    color: #666;
+    color: #666; /* Slightly lighter text color */
     margin-bottom: 0;
     line-height: 1.5;
 }
 
 body.dark .content-section p {
-    color: #bbb;
+    color: #ccc; /* Lighter text color in dark mode */
 }
 
 /* Footer Styles */
 footer {
-    background-color: #1a2436;
-    color: #eee;
+    background-color: #f4f4f4; /* Light background for footer */
+    color: #333;
     text-align: center;
     padding: 15px 0;
-    border-top: 2px solid #333;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    border-top: 2px solid #ddd;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+body.dark footer {
+    background-color: #111; /* Darker shade for dark theme footer */
+    color: #eee;
 }
 
 footer p {
     margin: 0;
     font-size: 16px;
+}
+
+.contact-footer {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+body.dark .contact-footer {
+    color: #eee;
 }
 
 .social-media {
@@ -202,11 +232,113 @@ footer p {
 }
 
 .social-media a {
-    color: #eee;
+    color: #333;
     font-size: 24px;
     transition: color 0.3s ease-in-out;
 }
 
+body.dark .social-media a {
+    color: #eee;
+}
+
 .social-media a:hover {
-    color: #007bff;
+    color: #007bff; /* Highlight color on hover */
+}
+
+body.dark .social-media a:hover {
+    color: #00ffff; /* Highlight color on hover in dark mode */
+}
+
+/* Typewriter Section Styles */
+.typewriter-section {
+    background-color: #ffffff; /* Light background to match body */
+    padding: 40px;
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* Divider */
+    margin-bottom: 40px; /* Space between sections */
+}
+
+body.dark .typewriter-section {
+    background-color: #000; /* Black background to match dark theme */
+    border-bottom: 2px solid #333; /* Darker divider */
+}
+
+.typewriter-container {
+    display: inline-block; /* Ensure the container fits the content */
+}
+
+.static-text {
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #333, #666); /* Gradient for static text in light mode */
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+}
+
+body.dark .static-text {
+    background: linear-gradient(to right, #00ffcc, #00ffff); /* Gradient for static text in dark mode */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.typewriter {
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #333, #666); /* Gradient for typewriter text in light mode */
+    -webkit-background-clip: text;
+    color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #333; /* Cursor for light mode */
+    animation: typewriter 4s steps(40, end) infinite, blink 0.75s step-end infinite;
+}
+
+body.dark .typewriter {
+    background: linear-gradient(to right, #00ffcc, #00ffff); /* Gradient for typewriter text in dark mode */
+    -webkit-background-clip: text;
+    color: transparent;
+    border-right: 2px solid #00ffff; /* Cursor for dark mode */
+}
+
+/* Typewriter Animation */
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Adjustments for Typewriter Section on Mobile Devices */
+@media only screen and (max-width: 768px) {
+    .typewriter-section {
+        padding: 20px;
+    }
+
+    .typewriter-container {
+        display: block;
+    }
+
+    .static-text, .typewriter {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .typewriter {
+        border-right: 1px solid #333; /* Smaller cursor for mobile */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    /* Hide contact link in header */
+    nav ul li a[href="#contact"] {
+        display: none;
+    }
+
+    /* Add contact link to footer */
+    .contact-footer {
+        display: block;
+    }
 }
