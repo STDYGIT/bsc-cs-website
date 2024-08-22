@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syllabus - Department of Computer Application</title>
-    <link rel="stylesheet" href="stylesyllabus.css">
+    <link rel="stylesheet" href="syllabusstyle.css">
 </head>
 <body>
     <header>
         <div class="department-title" id="home-button">
             🖥️ Department of Computer Application
         </div>
-        
         <nav>
             <ul>
-                <li><a href="#contact">📩 Contact</a></li>
+                <li>
+                    <div class="theme-switch" id="theme-switch"></div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -53,6 +54,7 @@
 
     <footer>
         <p>&copy; 🏫 Department of Computer Application</p>
+        <p class="contact-footer">📩 Contact</p>
         <ul class="social-media">
             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -68,6 +70,29 @@
             window.location.href = 'index.html'; // Navigates to the homepage if not already there
         }
     });
-</script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeSwitch = document.getElementById('theme-switch');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+
+            // Apply the saved theme on load
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark');
+                themeSwitch.classList.add('dark-theme');
+            }
+
+            themeSwitch.addEventListener('click', function () {
+                document.body.classList.toggle('dark');
+                themeSwitch.classList.toggle('dark-theme');
+
+                // Save the user's theme preference
+                if (document.body.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>

@@ -15,7 +15,7 @@ body {
 
 body.dark {
     background-color: #000; /* Black background for dark theme */
-    color: #eee;
+    color: #eee; /* Light text color for dark theme */
 }
 
 /* Header Styles */
@@ -37,6 +37,7 @@ header {
 body.dark header {
     background-color: #111; /* Darker shade for dark theme header */
     color: #eee;
+    border-bottom: 1px solid #444; /* Darker border for header */
 }
 
 .department-title {
@@ -77,41 +78,6 @@ body.dark nav a:hover {
     color: #fff;
 }
 
-/* Theme Switch Styles */
-.theme-switch {
-    display: inline-block;
-    width: 60px;
-    height: 30px;
-    border-radius: 30px;
-    background: linear-gradient(135deg,#ffffff, #30c5ac);
-    position: relative;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.theme-switch::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: left 0.3s ease-in-out, background-image 0.3s ease-in-out;
-    background-image: url('icons8-sun-64.png');
-}
-
-.theme-switch.dark-theme {
-    background: linear-gradient(135deg,  #30c5ac,#0d0c0c);
-}
-
-.theme-switch.dark-theme::before {
-    left: 33px;
-    background-image: url('icons8-moon-64.png');
-}
-
 /* Main Content Styles */
 main {
     flex: 1;
@@ -125,7 +91,7 @@ body.dark main {
 }
 
 /* Section Styles */
-.content-section {
+section {
     margin-bottom: 40px;
     padding: 30px;
     background-color: #f9f9f9; /* Light background for sections */
@@ -139,8 +105,8 @@ body.dark main {
     animation: fadeInUp 0.7s ease;
 }
 
-body.dark .content-section {
-    background-color: #111; /* Darker background for dark theme sections */
+body.dark section {
+    background-color: #222; /* Slightly lighter dark background for sections */
     border-color: #333;
 }
 
@@ -156,7 +122,7 @@ body.dark .content-section {
 }
 
 /* Hover Effect with Color Transition */
-.content-section:hover {
+section:hover {
     background-color: #f0f0f0; /* Slightly darker on hover */
     color: #000; /* Highlighted text on hover */
     border-color: #ccc; /* Lighter border on hover */
@@ -164,37 +130,99 @@ body.dark .content-section {
     transform: translateY(-5px); /* Slight lift on hover */
 }
 
-body.dark .content-section:hover {
+body.dark section:hover {
     background-color: #333; /* Darker background on hover */
     color: #00ffcc; /* Highlighted text on hover */
     border-color: #555; /* Lighter border on hover */
 }
 
 /* Section Heading */
-.content-section h2 {
+section h2 {
     margin-top: 0;
     color: inherit;
-    font-size: 22px;
+    font-size: 28px; /* Larger heading */
     font-weight: bold;
 }
 
 /* Section Paragraph */
-.content-section p {
+section p {
     color: #666; /* Slightly lighter text color */
-    margin-bottom: 0;
+    margin-bottom: 20px; /* Added space below paragraphs */
     line-height: 1.5;
 }
 
-body.dark .content-section p {
+body.dark section p {
     color: #ccc; /* Lighter text color in dark mode */
+}
+
+/* Year Syllabus Styles */
+.year-syllabus {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.year {
+    background-color: #ffffff; /* Light background for year syllabus boxes */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .year {
+    background-color: #333; /* Dark background for year syllabus boxes */
+    border: 1px solid #444; /* Darker border for year syllabus boxes */
+}
+
+.year h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+body.dark .year h3 {
+    color: #eee; /* Light text color for headings in dark mode */
+}
+
+/* Button Styles */
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.button.view {
+    background-color: #007bff;
+}
+
+.button.view:hover {
+    background-color: #0056b3;
+}
+
+.button.download {
+    background-color: #28a745;
+}
+
+.button.download:hover {
+    background-color: #218838;
 }
 
 /* Footer Styles */
 footer {
     background-color: #f4f4f4; /* Light background for footer */
     color: #333;
+    padding: 20px;
     text-align: center;
-    padding: 15px 0;
     border-top: 2px solid #ddd;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
@@ -203,6 +231,7 @@ footer {
 body.dark footer {
     background-color: #111; /* Darker shade for dark theme footer */
     color: #eee;
+    border-top: 1px solid #444; /* Darker border for footer */
 }
 
 footer p {
@@ -249,96 +278,37 @@ body.dark .social-media a:hover {
     color: #00ffff; /* Highlight color on hover in dark mode */
 }
 
-/* Typewriter Section Styles */
-.typewriter-section {
-    background-color: #ffffff; /* Light background to match body */
-    padding: 40px;
-    text-align: center;
-    border-bottom: 2px solid #ddd; /* Divider */
-    margin-bottom: 40px; /* Space between sections */
+/* Theme Switch Styles */
+.theme-switch {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ffffff, #30c5ac);
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-body.dark .typewriter-section {
-    background-color: #000; /* Black background to match dark theme */
-    border-bottom: 2px solid #333; /* Darker divider */
+.theme-switch::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: left 0.3s ease-in-out, background-image 0.3s ease-in-out;
+    background-image: url('icons8-sun-64.png');
 }
 
-.typewriter-container {
-    display: inline-block; /* Ensure the container fits the content */
+.theme-switch.dark-theme {
+    background: linear-gradient(135deg, #30c5ac, #0d0c0c);
 }
 
-.static-text {
-    font-size: 36px;
-    font-weight: bold;
-    background: linear-gradient(to right, #333, #666); /* Gradient for static text in light mode */
-    -webkit-background-clip: text;
-    color: transparent;
-    background-clip: text;
-}
-
-body.dark .static-text {
-    background: linear-gradient(to right, #00ffcc, #00ffff); /* Gradient for static text in dark mode */
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.typewriter {
-    font-size: 36px;
-    font-weight: bold;
-    background: linear-gradient(to right, #333, #666); /* Gradient for typewriter text in light mode */
-    -webkit-background-clip: text;
-    color: transparent;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #333; /* Cursor for light mode */
-    animation: typewriter 4s steps(40, end) infinite, blink 0.75s step-end infinite;
-}
-
-body.dark .typewriter {
-    background: linear-gradient(to right, #00ffcc, #00ffff); /* Gradient for typewriter text in dark mode */
-    -webkit-background-clip: text;
-    color: transparent;
-    border-right: 2px solid #00ffff; /* Cursor for dark mode */
-}
-
-/* Typewriter Animation */
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* Adjustments for Typewriter Section on Mobile Devices */
-@media only screen and (max-width: 768px) {
-    .typewriter-section {
-        padding: 20px;
-    }
-
-    .typewriter-container {
-        display: block;
-    }
-
-    .static-text, .typewriter {
-        font-size: 24px; /* Smaller font size for mobile */
-    }
-
-    .typewriter {
-        border-right: 1px solid #333; /* Smaller cursor for mobile */
-    }
-}
-
-/* Media Query for Mobile Devices */
-@media only screen and (max-width: 768px) {
-    /* Hide contact link in header */
-    nav ul li a[href="#contact"] {
-        display: none;
-    }
-
-    /* Add contact link to footer */
-    .contact-footer {
-        display: block;
-    }
+.theme-switch.dark-theme::before {
+    left: 33px;
+    background-image: url('icons8-moon-64.png');
 }
