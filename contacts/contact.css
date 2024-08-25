@@ -14,25 +14,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  background-color: #1a1a1a; /* Example background color */
 }
 
 .contact-box {
-  background-color: #1a1a1a;
+  background-color: rgba(26, 26, 26, 0.2); /* Slightly transparent black */
+  /* background-color: rgba(26, 26, 26, 0);  For fully transparent background */
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   padding: 40px;
   text-align: center;
   width: 400px;
   max-width: 90%;
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease;
-  position: relative;
-  z-index: 1; /* Ensure content is above blurred background */
+  transition: transform 0.5s ease-out, box-shadow 0.5s ease;
+  position: absolute; /*  Position within the canvas */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1); /* Initial scale of 1 */
+  z-index: 10;    /*  Make sure it's on top of the canvas */
 }
 
 .contact-box:hover {
-  transform: scale(1.05);
+  transform: translate(-50%, -50%) scale(1.05); /* Now scales up from the center */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
 }
 
