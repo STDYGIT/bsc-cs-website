@@ -2,11 +2,25 @@ const canvas = document.getElementById('starfield');
 const ctx = canvas.getContext('2d');
 const stars = [];
 const starCount = 500; // Increased number of stars
+let speed = 1; // Initial speed
 
 function initCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  createStars();
+  // Only create stars once
+  if (stars.length === 0) {
+    createStars();
+  } else {
+    // Update existing star positions on resize
+    for (let i = 0; i < starCount; i++) {
+      stars[i].x = Math.random() * canvas.width;
+      stars[i].y = Math.random() * canvas.height;
+      stars[i].z = Math.random() * canvas.width;
+    }
+  }
+
+  // Adjust speed based on screen width
+  speed = Math.max(0.5, 1 - (canvas.width / 1000)); // Slow down for smaller widths
 }
 
 function createStars() {
@@ -26,7 +40,7 @@ function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < starCount; i++) {
     let star = stars[i];
-    star.z -= 1;
+    star.z -= speed; // Use the calculated speed
 
     if (star.z <= 0) {
       star.z = canvas.width;
