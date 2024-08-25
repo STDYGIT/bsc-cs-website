@@ -83,7 +83,7 @@ body.dark nav a:hover {
     width: 60px;
     height: 30px;
     border-radius: 30px;
-    background: linear-gradient(135deg, #ffffff, #30c5ac);
+    background: linear-gradient(135deg,#ffffff, #30c5ac);
     position: relative;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
@@ -104,7 +104,7 @@ body.dark nav a:hover {
 }
 
 .theme-switch.dark-theme {
-    background: linear-gradient(135deg, #30c5ac, #0d0c0c);
+    background: linear-gradient(135deg,  #30c5ac,#0d0c0c);
 }
 
 .theme-switch.dark-theme::before {
@@ -262,4 +262,97 @@ body.dark .social-media a {
 
 body.dark .social-media a:hover {
     color: #0d6efd;
+}
+/* Typewriter Section Styles */
+.typewriter-section {
+    background-color: #ffffff; /* Light background to match body */
+    padding: 40px;
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* Divider */
+    margin-bottom: 40px; /* Space between sections */
+}
+
+body.dark .typewriter-section {
+    background-color: #000; /* Black background to match dark theme */
+    border-bottom: 2px solid #333; /* Darker divider */
+}
+
+.typewriter-container {
+    display: inline-block; /* Ensure the container fits the content */
+}
+
+.static-text {
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #333, #666); /* Gradient for static text in light mode */
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+}
+
+body.dark .static-text {
+    background: linear-gradient(to right, #00ffcc, #00ffff); /* Gradient for static text in dark mode */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.typewriter {
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #333, #666); /* Gradient for typewriter text in light mode */
+    -webkit-background-clip: text;
+    color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #333; /* Cursor for light mode */
+    animation: typewriter 4s steps(40, end) infinite, blink 0.75s step-end infinite;
+}
+
+body.dark .typewriter {
+    background: linear-gradient(to right, #00ffcc, #00ffff); /* Gradient for typewriter text in dark mode */
+    -webkit-background-clip: text;
+    color: transparent;
+    border-right: 2px solid #00ffff; /* Cursor for dark mode */
+}
+
+/* Typewriter Animation */
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Adjustments for Typewriter Section on Mobile Devices */
+@media only screen and (max-width: 768px) {
+    .typewriter-section {
+        padding: 20px;
+    }
+
+    .typewriter-container {
+        display: block;
+    }
+
+    .static-text, .typewriter {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .typewriter {
+        border-right: 1px solid #333; /* Smaller cursor for mobile */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    /* Hide contact link in header */
+    nav ul li a[href="#contact"] {
+        display: none;
+    }
+
+    /* Add contact link to footer */
+    .contact-footer {
+        display: block;
+    }
 }
