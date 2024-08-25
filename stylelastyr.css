@@ -3,63 +3,67 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000; /* Dark theme background color */
-  color: #eee; /* Dark theme text color */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+#home-link {
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
+#home-link:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+
+/* Theme Variables */
+body.light-theme {
+  --background-color: #ffffff; /* Light theme background color */
+  --text-color: #333333; /* Light theme text color */
+  --header-background-color: #f0f0f0; /* Light theme header background color */
+  --header-text-color: #333333; /* Light theme header text color */
+  --card-background-color: #f8f8f8; /* Light theme card background color */
+  --card-border-color: #ddd; /* Light theme card border color */
+  --button-background-color: #007bff; /* Button background color for light theme */
+  --button-text-color: #fff; /* Button text color for light theme */
+  --link-color: #0066cc; /* Light theme link color */
+  --hover-background-color: #e0e0e0; /* Light theme hover effect background */
+  --box-shadow-color: rgba(0, 0, 0, 0.1); /* Light theme shadow */
+}
+
+body.dark-theme {
+  --background-color: #000000; /* Dark theme background color */
+  --text-color: #eeeeee; /* Dark theme text color */
+  --header-background-color: #333333; /* Dark theme header background color */
+  --header-text-color: #eeeeee; /* Dark theme header text color */
+  --card-background-color: #030a16; /* Dark theme card background color */
+  --card-border-color: #333; /* Dark theme card border color */
+  --button-background-color: #007bff; /* Button background color for dark theme */
+  --button-text-color: #efecec; /* Button text color for dark theme */
+  --link-color: #66ccff; /* Dark theme link color */
+  --hover-background-color: #434242; /* Dark theme hover effect background */
+  --box-shadow-color: rgba(255, 255, 255, 0.1); /* Dark theme shadow */
 }
 
 header {
-  background-color: #333; /* Dark theme header background color */
-  color: #eee; /* Dark theme header text color */
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #424242;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 header h1 {
   margin: 0;
   font-size: 24px;
 }
-/* Add theme-switch styles */
-.theme-switch {
-    display: inline-block;
-    width: 60px;
-    height: 30px;
-    border-radius: 30px;
-    background: linear-gradient(135deg,#ffffff, #30c5ac);
-    position: relative;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.theme-switch::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: left 0.3s ease-in-out, background-image 0.3s ease-in-out;
-    background-image: url('icons8-sun-64.png');
-}
-
-.theme-switch.dark-theme {
-    background: linear-gradient(135deg,  #30c5ac,#0d0c0c);
-}
-
-.theme-switch.dark-theme::before {
-    left: 33px;
-    background-image: url('icons8-moon-64.png');
-}
-
 
 main {
   flex: 1;
@@ -72,8 +76,8 @@ h2 {
 }
 
 #readme {
-  background-color: #030a16; /* Darker README background color */
-  border: 1px solid #363535; /* Darker border color */
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
   border-radius: 6px;
   padding: 20px;
   margin-bottom: 20px;
@@ -99,18 +103,18 @@ h2 {
 }
 
 .card {
-  background-color: #030a16; /* Darker card background color */
-  border: 1px solid #333; /* Darker border color */
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--box-shadow-color);
   width: 300px;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .card-header {
-  background-color: #030a16; /* Darker header background color */
+  background-color: var(--card-background-color);
   padding: 15px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--card-border-color);
 }
 
 .card:hover {
@@ -122,8 +126,8 @@ h2 {
   display: inline-block;
   padding: 10px 15px;
   font-size: 14px;
-  color: #efecec;
-  background-color: #007bff; /* Button background color */
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
   border: none;
   border-radius: 4px;
   text-align: center;
@@ -137,19 +141,51 @@ h2 {
 }
 
 footer {
-  background-color: #333; /* Dark theme footer background color */
-  color: #eee; /* Dark theme footer text color */
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
   padding: 10px;
   text-align: center;
   font-size: 14px;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--header-background-color);
 }
 
-@media (max-width: 768px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Theme Switch Styles */
+.theme-switch {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffffff, #30c5ac);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.theme-switch::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: left 0.3s ease-in-out, background-image 0.3s ease-in-out;
+  background-image: url('icons8-sun-64.png');
+}
+
+body.light-theme .theme-switch {
+  background: linear-gradient(135deg, #ffffff, #30c5ac);
+}
+
+body.dark-theme .theme-switch {
+  background: linear-gradient(135deg, #30c5ac, #0d0c0c);
+}
+
+body.dark-theme .theme-switch::before {
+  left: 33px;
+  background-image: url('icons8-moon-64.png');
 }
 
 /* Swipe Button Styles */
@@ -158,7 +194,7 @@ footer {
   width: 100%;
   max-width: 300px;
   height: 50px;
-  background-color: #434242; /* Darker background color */
+  background-color: var(--hover-background-color);
   border-radius: 25px;
   overflow: hidden;
   margin-top: 10px;
@@ -170,7 +206,7 @@ footer {
   left: 0;
   width: 50%;
   height: 100%;
-  background-color: #2c042f; /* Slightly darker background color for the button */
+  background-color: #2c042f;
   color: #fff;
   text-align: center;
   line-height: 50px;
@@ -178,22 +214,22 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* To ensure the gradient text stays within the button */
+  overflow: hidden;
   padding-right: 10px;
   transition: left 0.3s ease;
+  cursor: pointer; /* Ensures it looks clickable */
 }
 
 .swipe-text {
   position: relative;
   font-size: 14px;
-  /* font-weight: bold; */
-  background: linear-gradient(90deg, #c0c0c0, #e5e5e5, #c0c0c0); /* Silver gradient colors */
+  background: linear-gradient(90deg, #c0c0c0, #e5e5e5, #c0c0c0);
   background-size: 300% 300%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   display: inline-block;
-  animation: gradient-text 3s linear infinite, glow 2s ease-in-out infinite; /* Apply gradient animation and glowing effect */
+  animation: gradient-text 3s linear infinite, glow 2s ease-in-out infinite;
 }
 
 @keyframes gradient-text {
@@ -235,6 +271,7 @@ footer {
   animation: pop 0.3s ease-in-out;
 }
 
+
 @keyframes pop {
   0% {
     transform: scale(0);
@@ -243,37 +280,9 @@ footer {
     transform: scale(1);
   }
 }
-/* Theme Switch Styles */
-.theme-switch {
-    display: inline-block;
-    width: 60px;
-    height: 30px;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #ffffff, #30c5ac);
-    position: relative;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.theme-switch::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: left 0.3s ease-in-out, background-image 0.3s ease-in-out;
-    background-image: url('icons8-sun-64.png');
-}
-
-.theme-switch.dark-theme {
-    background: linear-gradient(135deg, #30c5ac, #0d0c0c);
-}
-
-.theme-switch.dark-theme::before {
-    left: 33px;
-    background-image: url('icons8-moon-64.png');
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
