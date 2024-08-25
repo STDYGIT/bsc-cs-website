@@ -1,0 +1,87 @@
+body {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  transition: filter 0.5s ease;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-box {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease;
+  position: relative;
+  z-index: 1; /* Ensure content is above blurred background */
+}
+
+.contact-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease-in-out, top 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 2; /* Ensure image is above everything when scaled */
+}
+
+.contact-box h2 {
+  margin: 10px 0;
+  font-size: 26px;
+}
+
+.email-text {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #fff; /* Standard text color */
+}
+
+.email-text a {
+  color: #fff; /* Remove blue text */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px; /* Adds spacing between icons */
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+/* Full-screen blur effect */
+.blur-effect {
+  filter: blur(5px);
+}
