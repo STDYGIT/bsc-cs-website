@@ -100,7 +100,7 @@ body.dark nav a:hover {
     background-repeat: no-repeat;
     background-position: center;
     transition: left 0.3s ease-in-out, background-image 0.3s ease-in-out;
-    background-image: url('icons8-sun-64.png');
+    background-image: url('Resources_used/icons8-sun-64.png');
 }
 
 .theme-switch.dark-theme {
@@ -109,7 +109,7 @@ body.dark nav a:hover {
 
 .theme-switch.dark-theme::before {
     left: 33px;
-    background-image: url('icons8-moon-64.png');
+    background-image: url('Resources_used/icons8-moon-64.png');
 }
 
 /* Main Content Styles */
