@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Theme switch functionality
-    const themeSwitch = document.querySelector('.theme-switch');
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.body.classList.add(savedTheme + '-theme');
+    // const themeSwitch = document.querySelector('.theme-switch');
+    // const savedTheme = localStorage.getItem('theme') || 'light';
+    // document.body.classList.add(savedTheme + '-theme');
 
-    themeSwitch.addEventListener('click', () => {
-        document.body.classList.toggle('light-theme');
-        document.body.classList.toggle('dark-theme');
+    // themeSwitch.addEventListener('click', () => {
+    //     document.body.classList.toggle('light-theme');
+    //     document.body.classList.toggle('dark-theme');
 
-        // Save theme preference to local storage
-        const newTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
-        localStorage.setItem('theme', newTheme);
-    });
+    //     // Save theme preference to local storage
+    //     const newTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+    //     localStorage.setItem('theme', newTheme);
+    // });
 
     // Swipe button functionality
     const swipeButtons = document.querySelectorAll('.swipe-button');
