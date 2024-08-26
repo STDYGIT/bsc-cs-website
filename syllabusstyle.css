@@ -35,7 +35,7 @@ header {
 }
 
 body.dark header {
-    background-color: #111; /* Darker shade for dark theme header */
+    background-color: #000000; /* Darker shade for dark theme header */
     color: #eee;
     border-bottom: 1px solid #444; /* Darker border for header */
 }
@@ -127,14 +127,14 @@ section:hover {
     color: #000; /* Highlighted text on hover */
     border-color: #ccc; /* Lighter border on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px); /* Slight lift on hover */
+   /* ransform: translateY(-5px); /* Slig tht lift on hover */ */
 }
 
-body.dark section:hover {
+/* body.dark section:hover {
     background-color: #333; /* Darker background on hover */
     color: #00ffcc; /* Highlighted text on hover */
     border-color: #555; /* Lighter border on hover */
-}
+} */
 
 /* Section Heading */
 section h2 {
@@ -301,7 +301,7 @@ body.dark .social-media a:hover {
     background-repeat: no-repeat;
     background-position: center;
     transition: left 0.3s ease-in-out, background-image 0.3s ease-in-out;
-    background-image: url('Resources_used/icons8-sun-64.png');
+    background-image: url('icons8-sun-64.png');
 }
 
 .theme-switch.dark-theme {
@@ -310,5 +310,5 @@ body.dark .social-media a:hover {
 
 .theme-switch.dark-theme::before {
     left: 33px;
-    background-image: url('Resources_used/icons8-moon-64.png');
+    background-image: url('icons8-moon-64.png');
 }
