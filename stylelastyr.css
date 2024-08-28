@@ -311,6 +311,4 @@ body.dark .contact-footer:hover {
     color: inherit; /* Ensure link inherits color from parent */
     text-decoration: none; /* Remove underline from links */
 }
-.contact-footer:hover a {
-    color: inherit; /* Keep same color on hover */
-}
+
