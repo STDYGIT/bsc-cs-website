@@ -306,5 +306,8 @@ footer .contact-footer {
 footer .contact-footer:hover {
   color: var(--link-color); /* Optionally, change color on hover */
 }
-
+a {
+  text-decoration: none;
+    color: wheat
+}
 
