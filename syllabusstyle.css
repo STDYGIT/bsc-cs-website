@@ -239,14 +239,6 @@ footer p {
     font-size: 16px;
 }
 
-.contact-footer {
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
 body.dark .contact-footer {
     color: #eee;
 }
@@ -312,3 +304,32 @@ body.dark .social-media a:hover {
     left: 33px;
     background-image: url('icons8-moon-64.png');
 }
+.contact-footer {
+    font-size: 20px; /* Increased font size */
+    color: #333; /* Dark text in light theme */
+    text-decoration: none; /* No underline */
+    cursor: pointer;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+body.dark .contact-footer {
+    color: #eee; /* Light text in dark theme */
+}
+
+.contact-footer:hover {
+    color: inherit; /* Keep the same color on hover */
+    text-decoration: none; /* No underline on hover */
+}
+
+body.dark .contact-footer:hover {
+    color: inherit; /* Keep the same color in dark theme on hover */
+}
+.contact-footer a {
+    color: inherit; /* Ensure link inherits color from parent */
+    text-decoration: none; /* Remove underline from links */
+}
+.contact-footer:hover a {
+    color: inherit; /* Keep same color on hover */
+}
+/* Soc
