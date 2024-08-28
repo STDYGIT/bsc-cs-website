@@ -287,16 +287,24 @@ body.dark-theme .theme-switch::before {
   }
 }
 .contact-footer {
-    font-size: 20px; /* Increased font size */
-    color: #000; /* Dark text in light theme */
-    text-decoration: none; /* No underline */
-    cursor: pointer;
-    margin-top: 10px;
-    transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+  font-size: 20px; /* Increased font size */
+  color: var(--header-text-color); /* Ensure text color matches theme */
+  text-decoration: none; /* No underline */
+  cursor: pointer;
+  margin-top: 10px;
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
 }
 
 body.dark .contact-footer {
     color: #eee; /* Light text in dark theme */
+}
+
+footer .contact-footer {
+  color: var(--header-text-color); /* Inherits theme's header text color */
+}
+
+footer .contact-footer:hover {
+  color: var(--link-color); /* Optionally, change color on hover */
 }
 
 
