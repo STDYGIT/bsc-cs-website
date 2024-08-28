@@ -296,7 +296,7 @@ body.dark-theme .theme-switch::before {
 }
 
 body.dark .contact-footer {
-    color: #eee; /* Light text in dark theme */
+    color: #0000; /* Light text in dark theme */
 }
 
 
