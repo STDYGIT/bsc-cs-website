@@ -299,8 +299,4 @@ body.dark .contact-footer {
     color: #eee; /* Light text in dark theme */
 }
 
-.contact-footer a {
-    color: inherit; /* Ensure link inherits color from parent */
-    text-decoration: none; /* Remove underline from links */
-}
 
