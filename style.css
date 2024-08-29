@@ -356,3 +356,64 @@ body.dark .typewriter {
         display: block;
     }
 }
+
+/* Information Bulletin Styles */
+.info-bulletin {
+    background-color: #f9f9f9; /* Light background for bulletin */
+    padding: 10px 0;
+    border-top: 2px solid #ddd; /* Divider above the bulletin */
+    border-bottom: 2px solid #ddd; /* Divider below the bulletin */
+    overflow: hidden; /* Hide overflow */
+    margin-bottom: 40px; /* Space between bulletin and next section */
+}
+
+body.dark .info-bulletin {
+    background-color: #111; /* Dark background for dark theme */
+    border-top: 2px solid #333; /* Darker divider in dark mode */
+    border-bottom: 2px solid #333; /* Darker divider in dark mode */
+}
+
+.ticker {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ticker p {
+    display: inline-block;
+    font-size: 18px;
+    animation: ticker 15s linear infinite; /* Time for scrolling across the screen */
+    padding-left: 0; /* Remove padding to reduce gap */
+    margin-right: 100%; /* Add margin to make the scrolling continuous */
+}
+
+.ticker a {
+    color: #333;
+    text-decoration: none; /* Remove underline from link */
+    transition: color 0.3s ease-in-out;
+}
+
+body.dark .ticker a {
+    color: #eee; /* Light text in dark mode */
+}
+
+.ticker a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+body.dark .ticker a:hover {
+    color: #0d6efd; /* Hover color in dark mode */
+}
+
+@keyframes ticker {
+    from {
+        transform: translateX(100%); /* Start off-screen */
+    }
+    to {
+        transform: translateX(-100%); /* Move off-screen to the left */
+    }
+}
+
+
+
