@@ -385,7 +385,7 @@ body.dark .info-bulletin {
     font-size: 18px;
     animation: ticker 15s linear infinite; /* Time for scrolling across the screen */
     padding-left: 0; /* Remove padding to reduce gap */
-    margin-right: 100%; /* Add margin to make the scrolling continuous */
+    margin-right: 50%; /* Add margin to make the scrolling continuous */
 }
 
 .ticker a {
