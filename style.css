@@ -478,7 +478,7 @@ nav ul {
     .contact-icon {
         width: 25px; /* Smaller icon size for mobile */
         height: 25px;
-        margin-bottom: -6px;
+        margin-bottom: -10px;
     }
 
     .theme-switch {
