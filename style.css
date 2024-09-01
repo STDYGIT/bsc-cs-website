@@ -24,14 +24,32 @@ header {
     color: #333;
     padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Align items vertically center */
+    justify-content: space-between; /* Space between heading and nav */
     border-bottom: 2px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+nav {
+    display: flex;
+    align-items: center; /* Align nav items vertically center */
+    gap: 15px; /* Space between nav items */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Align list items vertically center */
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: flex;
+    align-items: center; /* Align items vertically center */
 }
 
 body.dark header {
@@ -40,12 +58,12 @@ body.dark header {
 }
 
 .department-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 }
 
-nav ul {
+/* nav ul {
     list-style: none;
     display: flex;
     align-items: center;
@@ -60,9 +78,9 @@ nav a {
     border-radius: 25px;
     background-color: #ddd;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
+} */
 
-body.dark nav a {
+/* body.dark nav a {
     color: #eee;
     background-color: #444;
 }
@@ -75,7 +93,7 @@ nav a:hover {
 body.dark nav a:hover {
     background-color: #666;
     color: #fff;
-}
+} */
 
 /* Theme Switch Styles */
 .theme-switch {
@@ -439,30 +457,34 @@ nav ul {
 }
 
 /* Adjustments for Mobile Devices */
+/* Adjustments for Mobile Devices */
 @media only screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack items vertically */
+    header {
+        padding: 15px;
+        flex-direction: column; /* Stack items vertically on mobile */
         align-items: flex-start; /* Align items to the start */
-        gap: 10px; /* Reduce space between items */
+    }
+
+    .department-title {
+        font-size: 20px; /* Smaller font size for mobile */
+        margin-bottom: 10px; /* Space between title and nav items */
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-between; /* Space items evenly */
     }
 
     .contact-icon {
         width: 25px; /* Smaller icon size for mobile */
         height: 25px;
+        margin-bottom: -6px;
     }
 
     .theme-switch {
         margin-top: 10px; /* Add space between icon and switch */
     }
-
-    /* Adjust padding and margin for header on mobile */
-    header {
-        padding: 15px;
-    }
-
-    .department-title {
-        font-size: 20px; /* Smaller font size for mobile */
-    }
 }
+
 
 
