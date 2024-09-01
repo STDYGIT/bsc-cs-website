@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QS598XH622"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QS598XH622');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resource Version Control</title>
@@ -20,63 +11,95 @@
     <h1>
       <a href="index.html" id="home-link">Resource Version Control</a>
     </h1>
-    <!-- Add the theme switcher here -->
-    <!-- <div class="theme-switch" id="theme-switch"></div> -->
   </header>
   <main>
     <section id="readme">
       <h2>README</h2>
-      <p>Welcome to the Resource Version Control system. Here, you can access the resources for each semester's coursework in Excel format. Each card represents a different semester, with the latest updates and materials available for download.</p>
-      <p>Click on the "Download Excel Sheet" button to obtain the latest versions of the resources. If you encounter any issues or have questions, please reach out to the contact link in the website.</p>
+       <pre>
+        <p>  Here, you can easily access coursework resources for each semester in Excel format. To begin, select your year from the dropdown menu.
+
+  Once you've made your selection, you'll be able to view and download the resources available for that year and semester.
+          
+  Each card represents a specific semester and includes the latest updates and materials available for download.
+          
+  You can either click on the "Open Sheet" button to access the most recent versions of the resources or use the swipe gesture to download the PDF format of the sheet.
+          
+  If you have any questions or run into any issues, please don’t hesitate to reach out via the contact link provided on the website.</p>
+ </pre>
     </section>
     <section id="resource-list">
       <h2>Available Resources</h2>
-      <div class="card-container">
-        <div class="card">
-          <div class="card-header">
-            <h3>Year 1 Sem-1 BSCHCS</h3>
-          </div>
-          <div class="card-body">
-            <a href="https://docs.google.com/spreadsheets/d/1Dpj8PenBUFsf9Vmnu5oNQEcg_m-tQXh3kfRcOxN7w68/edit?usp=sharing" class="button" download>Open - Sheet</a>
-            <div class="swipe-container">
-              <div class="swipe-button" data-url="https://drive.google.com/uc?export=download&id=17jIwGh6aJLLq6EvpcesJtQSF2frNyFpU">
-                <span class="swipe-text">Swipe to Download</span>
+      
+      <div class="dropdown-container">
+        <select id="year-select" class="dropdown-select">
+          <option value="Select Year" disabled selected>Select your Year</option>
+          <option value="year1">Year 1</option>
+          <option value="year2">Year 2</option>
+          <option value="year3">Year 3</option>
+        </select>
+      </div>
+      
+      <!-- No Year Selected Message -->
+      <p id="no-year-selected" class="no-year-message">Select your year to view the data resources.</p>
+
+      <div id="year1" class="year-content" style="display:none;">
+        <div class="card-container">
+          <div class="card">
+            <div class="card-header">
+              <h3>Year 1 Sem-1 BSCHCS</h3>
+            </div>
+            <div class="card-body">
+              <a href="https://docs.google.com/spreadsheets/d/1Dpj8PenBUFsf9Vmnu5oNQEcg_m-tQXh3kfRcOxN7w68/edit?usp=sharing" class="button" download>Open - Sheet</a>
+              <div class="swipe-container">
+                <div class="swipe-button" data-url="https://drive.google.com/uc?export=download&id=17jIwGh6aJLLq6EvpcesJtQSF2frNyFpU">
+                  <span class="swipe-text">Swipe to Download</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3>Year 1 Sem-2 BSCHCS</h3>
-          </div>
-          <div class="card-body">
-            <a href="https://docs.google.com/spreadsheets/d/1aLZbU11toQHZoNIZCEA8RhFtwDkHUWFt6pd1grnDdUM/edit?usp=sharing" class="button" download>Open - Sheet</a>
-            <div class="swipe-container">
-              <div class="swipe-button" data-url="https://drive.google.com/uc?export=download&id=1gm9RkUCBIq8LjQumD6s8Miv4ROUkn6lk">
-                <span class="swipe-text">Swipe to Download</span>
-              </div>
+          <div class="card">
+            <div class="card-header">
+              <h3>Year 1 Sem-2 BSCHCS</h3>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3>Year 2 Sem-3 BSCHCS</h3>
-          </div>
-          <div class="card-body">
-            <a href="https://docs.google.com/spreadsheets/d/1xGsJvkcQEECTY4EkgPOEyhVFNucRIHnfqMyfGRsALsU/edit?usp=sharing" class="button" download>Open - Sheet</a>
-            <div class="swipe-container">
-              <div class="swipe-button" data-url="https://drive.google.com/uc?export=download&id=1rJZltn0roKihlhOoTbLliS1ROkRlj7O8">
-                <span class="swipe-text">Swipe to Download</span>
+            <div class="card-body">
+              <a href="https://docs.google.com/spreadsheets/d/1aLZbU11toQHZoNIZCEA8RhFtwDkHUWFt6pd1grnDdUM/edit?usp=sharing" class="button" download>Open - Sheet</a>
+              <div class="swipe-container">
+                <div class="swipe-button" data-url="https://drive.google.com/uc?export=download&id=1gm9RkUCBIq8LjQumD6s8Miv4ROUkn6lk">
+                  <span class="swipe-text">Swipe to Download</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div id="year2" class="year-content" style="display:none;">
+        <div class="card-container">
+          <div class="card">
+            <div class="card-header">
+              <h3>Year 2 Sem-3 BSCHCS</h3>
+            </div>
+            <div class="card-body">
+              <a href="https://docs.google.com/spreadsheets/d/1xGsJvkcQEECTY4EkgPOEyhVFNucRIHnfqMyfGRsALsU/edit?usp=sharing" class="button" download>Open - Sheet</a>
+              <div class="swipe-container">
+                <div class="swipe-button" data-url="https://drive.google.com/uc?export=download&id=1rJZltn0roKihlhOoTbLliS1ROkRlj7O8">
+                  <span class="swipe-text">Swipe to Download</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="year3" class="year-content" style="display:none;">
+        <!-- Add year 3 content here -->
+      </div>
+
     </section>
   </main>
   <footer>
     <p>&copy; 2024 Resource Version Control</p>
-     <p class="contact-footer"><a href="contacts/contact.html">Contact</a></p>
+    <p class="contact-footer"><a href="contacts/contact.html">Contact</a></p>
   </footer>
 
   <!-- Add JavaScript file or inline script -->

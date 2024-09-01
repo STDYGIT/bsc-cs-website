@@ -311,3 +311,71 @@ a {
     color: wheat
 }
 
+/* Dropdown Styles */
+.dropdown-container {
+  margin-bottom: 20px;
+}
+
+.dropdown-select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid var(--card-border-color);
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-select option {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+}
+
+/* No Year Selected Message */
+.no-year-message {
+  color: var(--link-color);
+  font-size: 16px;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-bottom: 20px;
+}
+
+.dropdown-select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid var(--card-border-color);
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.no-year-message {
+  color: var(--link-color);
+  font-size: 16px;
+  text-align: center; /* Center the text */
+  margin-top: 10px;
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 768px) {
+  .dropdown-select {
+    max-width: 100%; /* Make dropdown take full width on smaller screens */
+    width: 90%; /* Add some margin for better spacing */
+  }
+}
+
+.formatted-text {
+  white-space: pre-wrap; /* Preserve whitespace and line breaks */
+  padding: 20px; /* Add some padding if needed */
+  border: 1px solid #ddd; /* Optional: Add a border for visual separation */
+  background-color: var(--card-background-color); /* Match the card background color */
+  border-radius: 6px; /* Optional: Rounded corners */
+}
