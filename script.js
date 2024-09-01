@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeSwitch = document.querySelector('.theme-switch');
+    const contactIcon = document.getElementById('contact-icon');
+    const contactOpenIcon = document.getElementById('contact-open-icon');
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.classList.add(savedTheme);
     themeSwitch.classList.toggle('dark-theme', savedTheme === 'dark');
 
     themeSwitch.addEventListener('click', toggleTheme);
+    contactIcon.addEventListener('click', openContactBox);
+    contactOpenIcon.addEventListener('click', openContactBox);
 
     let touchStartX = 0;
     let touchEndX = 0;
@@ -35,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', 'dark');
         }
         themeSwitch.classList.toggle('dark-theme');
+    }
+
+    function openContactBox() {
+        // Implement the functionality to open the contact box
+        window.location.href = 'contacts/contact.html'; // Example action
     }
 });
 

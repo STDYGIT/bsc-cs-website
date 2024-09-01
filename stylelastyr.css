@@ -379,3 +379,25 @@ a {
   background-color: var(--card-background-color); /* Match the card background color */
   border-radius: 6px; /* Optional: Rounded corners */
 }
+
+.contact-icon,
+.contact-open-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.contact-icon:hover,
+.contact-open-icon:hover {
+    opacity: 0.8;
+}
+
+/* Positioning of icons in header */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}

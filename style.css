@@ -415,5 +415,54 @@ body.dark .ticker a:hover {
     }
 }
 
+/* Icon Styles */
+.contact-icon,
+.contact-open-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.contact-icon:hover,
+.contact-open-icon:hover {
+    opacity: 0.8;
+}
+
+/* Positioning of icons in header */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Adjustments for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        gap: 10px; /* Reduce space between items */
+    }
+
+    .contact-icon {
+        width: 25px; /* Smaller icon size for mobile */
+        height: 25px;
+    }
+
+    .theme-switch {
+        margin-top: 10px; /* Add space between icon and switch */
+    }
+
+    /* Adjust padding and margin for header on mobile */
+    header {
+        padding: 15px;
+    }
+
+    .department-title {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+}
 
 

@@ -12,12 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //     const newTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
     //     localStorage.setItem('theme', newTheme);
     // });
-
-
     const yearSelect = document.getElementById('year-select');
     const yearContents = document.querySelectorAll('.year-content');
     const noYearSelectedMessage = document.getElementById('no-year-selected');
-  
     // Handle dropdown change event
     yearSelect.addEventListener('change', function () {
       const selectedYear = yearSelect.value;
@@ -102,4 +99,5 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('mouseup', handleEnd);
         button.addEventListener('mouseleave', handleEnd);
     });
+   
 });
