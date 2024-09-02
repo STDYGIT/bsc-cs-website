@@ -15,7 +15,14 @@ body.dark {
     background-color: #000; /* Black background for dark theme */
     color: #eee;
 }
-
+#home-link {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  #home-link:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+  }
 /* Header Styles */
 header {
     background-color: #f4f4f4; /* Light background for header */
@@ -274,4 +281,108 @@ nav ul {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+/* Accordion Styles */
+.accordion {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.year-container {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #f4f4f4; /* Light background */
+    color: #333;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #e2e2e2;
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.accordion-content {
+    max-height: 0; /* Initially collapsed */
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.6s ease; /* Smooth sliding effect */
+    padding: 0 20px;
+    background-color: #fff; /* Light background for content */
+    border-top: 1px solid #ddd;
+}
+
+.accordion-content .semester {
+    margin-bottom: 20px;
+}
+
+.accordion-content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.video-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Dark Theme Styles */
+body.dark .accordion-header {
+    background-color: #333; /* Dark background */
+    color: #eee; /* Light text */
+}
+
+body.dark .accordion-header:hover {
+    background-color: #444; /* Slightly lighter on hover */
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+body.dark .accordion-content {
+    background-color: #222; /* Dark background for content */
+    color: #ddd; /* Lighter text in dark mode */
+    border-top: 1px solid #444; /* Darker border */
+}
+
+body.dark .accordion-content h3 {
+    color: #fff; /* White text for semester titles */
+}
+
+body.dark .video-box {
+    background-color: #333; /* Dark background for video boxes */
+    color: #ccc; /* Lighter text for video descriptions */
+    border: 1px solid #444; /* Darker border */
+}
+
+body.dark .video-box:hover {
+    background-color: #444; /* Slightly lighter on hover */
+    color: #fff; /* Brighter text on hover for better readability */
+}
+
+body.dark .video-box h3 {
+    color: #fff; /* White text for video titles */
+}
+
+body.dark .video-box p {
+    color: #bbb; /* Slightly lighter text for video descriptions */
+}
+
+@media (min-width: 768px) {
+    .video-row {
+        flex-direction: row;
+    }
 }
