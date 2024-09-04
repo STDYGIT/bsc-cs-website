@@ -386,3 +386,80 @@ body.dark .video-box p {
         flex-direction: row;
     }
 }
+
+/* Dropdown Styles */
+.dropdown-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin-bottom: 20px;
+}
+
+.dropdown-select {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--card-border-color);
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none; /* Customize the dropdown arrow */
+    background: var(--dropdown-background); /* Add a gradient background */
+    background-size: cover;
+    box-shadow: none; /* Remove box shadow */
+    outline: none; /* Remove default outline */
+}
+
+.dropdown-select::-ms-expand { /* For IE and Edge */
+    display: none;
+}
+
+.dropdown-select:hover {
+    border-color: #000; /* Darken border color on hover */
+}
+
+/* Customize the dropdown arrow (using pseudo-elements) */
+.dropdown-select::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%) rotate(90deg);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid var(--text-color);
+    pointer-events: none;
+}
+
+/* Add a hover effect to the dropdown */
+.dropdown-select:hover::after {
+    border-top-color: #000; /* Change arrow color on hover */
+}
+
+/* Style the dropdown options */
+.dropdown-select option {
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+    padding: 8px 12px;
+}
+
+.dropdown-select option:hover {
+    background-color: #eee; /* Lighten the background on hover */
+}
+
+/* ... Rest of your CSS ... */
+
+/* Apply a light outline for the dark theme */
+body.dark .dropdown-select {
+    border: 2px solid white; /* White outline for dark theme */
+}
+
+/* Apply a dark outline for the light theme */
+body:not(.dark) .dropdown-select {
+    border: 2px solid black; /* Dark outline for light theme */
+}
+
+/* ... Rest of your CSS ... */
