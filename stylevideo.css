@@ -344,7 +344,7 @@ nav ul {
 /* Dark Theme Styles */
 body.dark .accordion-header {
     background-color: #333; /* Dark background */
-    color: #eee; /* Light text */
+    color: #b95b5b; /* Light text */
 }
 
 body.dark .accordion-header:hover {
@@ -359,7 +359,7 @@ body.dark .accordion-content {
 }
 
 body.dark .accordion-content h3 {
-    color: #fff; /* White text for semester titles */
+    color: #b84f6d; /* White text for semester titles */
 }
 
 body.dark .video-box {
