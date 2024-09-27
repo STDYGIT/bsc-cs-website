@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('home-button').addEventListener('click', function() {
-    if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+    if (window.location.pathname === '/HOME.html' || window.location.pathname === '/') {
         window.location.reload(); // Reloads the page if it's already the homepage
     } else {
-        window.location.href = 'index.html'; // Navigates to the homepage if not already there
+        window.location.href = 'HOME.html'; // Navigates to the homepage if not already there
     }
 });
 
