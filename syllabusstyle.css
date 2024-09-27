@@ -293,6 +293,7 @@ body.dark .contact-footer {
 body.dark .contact-footer:hover {
     color: inherit; /* Keep the same color in dark theme on hover */
 }
+
 .contact-footer a {
     color: inherit; /* Ensure link inherits color from parent */
     text-decoration: none; /* Remove underline from links */
@@ -300,6 +301,8 @@ body.dark .contact-footer:hover {
 .contact-footer:hover a {
     color: inherit; /* Keep same color on hover */
 }
+
+
 
 .contact-icon,
 .contact-open-icon {

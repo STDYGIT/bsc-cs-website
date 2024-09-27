@@ -17,8 +17,6 @@ body.dark {
     background-color: #000; /* Black background for dark theme */
     color: #eee;
 }
-
-/* Header Styles */
 header {
     background-color: #f4f4f4; /* Light background for header */
     color: #333;
@@ -33,24 +31,27 @@ header {
     z-index: 1000;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
+
 nav {
     display: flex;
-    align-items: center; /* Align nav items vertically center */
-    gap: 15px; /* Space between nav items */
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    align-items: center; /* Align list items vertically center */
+    align-items: center;
     padding: 0;
     margin: 0;
+    gap: 20px; /* Adjust spacing between icons */
 }
 
 nav li {
     display: flex;
-    align-items: center; /* Align items vertically center */
+    align-items: center;
 }
+
 
 body.dark header {
     background-color: #111; /* Darker shade for dark theme header */
@@ -63,39 +64,6 @@ body.dark header {
     cursor: pointer;
 }
 
-/* nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 25px;
-    background-color: #ddd;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-} */
-
-/* body.dark nav a {
-    color: #eee;
-    background-color: #444;
-}
-
-nav a:hover {
-    background-color: #ccc;
-    color: #000;
-}
-
-body.dark nav a:hover {
-    background-color: #666;
-    color: #fff;
-} */
-
-/* Theme Switch Styles */
 .theme-switch {
     display: inline-block;
     width: 60px;
@@ -222,7 +190,20 @@ body.dark footer {
     background-color: #111; /* Darker shade for dark theme footer */
     color: #eee;
 }
+.profile-icon, .contact-icon, .theme-switch {
+    display: inline-block;
+    vertical-align: middle;
+}
 
+.profile-icon img{
+    width: 32px; /* Ensure all icons have same size */
+    height: 32px;
+    margin-right: 0px;
+}
+.contact-icon img{
+    width: 25px; /* Ensure all icons have same size */
+    height: 25px;
+}
 .contact-footer {
     font-size: 20px; /* Increased font size */
     color: #333; /* Dark text in light theme */
@@ -434,19 +415,6 @@ body.dark .ticker a:hover {
 }
 
 /* Icon Styles */
-.contact-icon,
-.contact-open-icon {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.contact-icon:hover,
-.contact-open-icon:hover {
-    opacity: 0.8;
-}
 
 /* Positioning of icons in header */
 nav ul {
@@ -484,4 +452,11 @@ nav ul {
     .theme-switch {
         margin-top: 10px; /* Add space between icon and switch */
     }
+
+    .profile-icon {
+        width: 35px; /* Smaller icon size for mobile */
+        height: 35px;
+        margin-bottom: -10px;
+    }
+
 } 
