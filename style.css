@@ -91,7 +91,7 @@ body.dark header {
 }
 
 .theme-switch.dark-theme {
-    background: linear-gradient(82deg,#ffffff, #693ca4);
+    background: linear-gradient(82deg,#ecefff, #8c35ff);
 }
 
 .theme-switch.dark-theme::before {
