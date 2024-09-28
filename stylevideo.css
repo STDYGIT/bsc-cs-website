@@ -471,11 +471,11 @@ body.dark .video-box p {
 
 /* Apply a light outline for the dark theme */
 body.dark .dropdown-select {
-    border: 2px solid white; /* White outline for dark theme */
+    border: 5px solid white; /* White outline for dark theme */
 }
 
 /* Apply a dark outline for the light theme */
 body:not(.dark) .dropdown-select {
-    border: 2px solid black; /* Dark outline for light theme */
+    border: 5px solid black; /* Dark outline for light theme */
 }
 
