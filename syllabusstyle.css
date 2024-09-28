@@ -205,6 +205,16 @@ body.dark footer {
 footer p {
     margin: 0;
     font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+body.dark footer p{
+    color: white;
+    text-decoration: none;
+}
+body.dark footer {
+    background-color: #111; /* Darker shade for dark theme footer */
+    color: #eee;
 }
 
 body.dark .contact-footer {
