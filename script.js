@@ -56,7 +56,7 @@ document.getElementById('home-button').addEventListener('click', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const phrases = ["last year question papers!!", "video resources!!", "Your Results!!!", "course syllabus!!!!"];
+    const phrases = ["Softwares ⎋ !","last year question papers!!", "video resources!!!", "Your Results!!", "course syllabus!!!!"];
     const typewriterElement = document.querySelector('.typewriter');
     const typingSpeed = 50;
     const backspacingSpeed = 50;
