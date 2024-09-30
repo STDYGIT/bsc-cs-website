@@ -46,7 +46,7 @@ body.light {
 
 /* Dark Theme */
 body.dark {
-  background: linear-gradient(135deg, #1c1c1c, #282828, #333333);
+  background: linear-gradient(126deg, #648ccf80, #0000009e);
   color: #fff; /* White text in dark theme */
 }
 
@@ -81,7 +81,7 @@ header {
 
 /* Dark Mode Header */
 body.dark header {
-  background: linear-gradient(45deg, #5d626a, #000000);
+  background: linear-gradient(126deg, #7e8da6, #000000);
   color: #eee;
 }
 
@@ -287,7 +287,7 @@ footer {
 }
 
 body.dark footer {
-  background: linear-gradient(45deg, #5d626a80, #0500189e);/* Darker shade for dark theme footer */
+  background: linear-gradient(126deg, #648ccf80, #0000009e);/* Darker shade for dark theme footer */
   color: #eee;
 
 }
