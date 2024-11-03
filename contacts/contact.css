@@ -1,0 +1,90 @@
+body {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  transition: filter 0.5s ease;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a; /* Example background color */
+}
+
+.contact-box {
+  background-color: rgba(26, 26, 26, 0.2); /* Slightly transparent black */
+  /* background-color: rgba(26, 26, 26, 0);  For fully transparent background */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  transition: transform 0.5s ease-out, box-shadow 0.5s ease;
+  position: absolute; /*  Position within the canvas */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1); /* Initial scale of 1 */
+  z-index: 10;    /*  Make sure it's on top of the canvas */
+}
+
+.contact-box:hover {
+  transform: translate(-50%, -50%) scale(1.05); /* Now scales up from the center */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease-in-out, top 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 2; /* Ensure image is above everything when scaled */
+}
+
+.contact-box h2 {
+  margin: 10px 0;
+  font-size: 26px;
+}
+
+.email-text {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #fff; /* Standard text color */
+}
+
+.email-text a {
+  color: #fff; /* Remove blue text */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px; /* Adds spacing between icons */
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+/* Full-screen blur effect */
+.blur-effect {
+  filter: blur(5px);
+}
